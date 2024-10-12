@@ -1,7 +1,9 @@
-# ds040
+# DS040
+## Introduction
+A collection of examples in Data Science Seiries 040. (Advanced Deep Learning with Keras)
 
-## further readings
-### deep neural networks
+## Further Readings
+### Deep Neural Networks
 - [Densely Connected Convolutional Networks]
 - [Identity Mappings in Deep Residual Networks]
 - [Deep Residual Learning for Image Recognition]

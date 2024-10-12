@@ -1,24 +1,26 @@
-# ds029
+# DS029
+## Introduction
+A collection of examples in Data Science Seiries 029. (Deep Learning in Practice)
 
-## further readings
-### noise reduction
+## Further Readings
+### Noise Reduction
 - [A Fast Learning Algorithm for Deep Belif Nets]
 - [Extracting and Composing Robust Features with Denosing Autoencoders]
 - [The Application of Deep Convolutional Denoising Autoencoder for Optical Character Recognition Preprocessing]
 
-### auto colorization
+### Auto Colorization
 - [U-Net: Convolutional Network for Biomedical Image Segmentation]
 - [Deep Residual Learning for Image Recognition]
 - [Colorful Image Colorization]
 
-### super resolution
+### Super Resolution
 - [Image Super-Resolution Using Deep Convolutional Networks]
 - [Image Restoration Using Convolutional Auto-encoders with Symmetric Skip Connections]
 
-### style transfer
+### Style Transfer
 - [Perceptual Losses for Real-Time Style Transfer and Super-Resolution]
 
-### image generator
+### Image Generator
 - [Tutorial on Variational Autoencoders]
 - [Unsupervised Representation Learning with Deep Convolutional Generative Adversarial Networks]
 - [BEGAN: Boundary Equilibrium Generative Adversarial Networks]
@@ -27,7 +29,7 @@
 - [Unpaired Image-to-Image Translation using Cycle-Consistent Adversarial Networks]
 - [SeqGAN: Sequence Generative Adversarial Nets with Policy Gradient]
 
-### others
+### Others
 - [Dropout: A Simple Way to Prevent Neural Networks from Overfitting]
 
 
