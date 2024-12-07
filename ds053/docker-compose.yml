@@ -3,8 +3,8 @@ services:
   jupyter:
     build:
       context: .
-    image: ds093
-    container_name: ds093
+    image: ds053
+    container_name: ds053
     ports:
       - "11000:8888"
     volumes:
@@ -20,5 +20,5 @@ services:
     tty: true
     command: >
       bash -c "
-      cd / && jupyter notebook --no-browser --allow-root --ip='*' --port=8888 --NotebookApp.password='' --NotebookApp.token=''
+      cd /opt/project/ && jupyter notebook --no-browser --allow-root --ip='*' --port=8888 --NotebookApp.password='' --NotebookApp.token=''
       "
