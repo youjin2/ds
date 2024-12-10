@@ -11,7 +11,9 @@ model = tf.keras.Sequential([
     tf.keras.layers.Dense(10)
 ])
 
-model.compile(optimizer='adam',
-              loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
-              metrics=['accuracy'])
-model.fit(train_images, train_labels, batch_size=256, epochs=10)
+model.compile(
+    optimizer='adam',
+    loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
+    metrics=['accuracy']
+)
+model.fit(train_images, train_labels, batch_size=256, epochs=5)
