@@ -500,6 +500,7 @@ class Transformer:
         epochs: int = 1,
         validation_data: Tuple[tf.Tensor, tf.Tensor] = None,
         callbacks: Tuple[tf.keras.callbacks.Callback] = None,
+        **kwargs,
     ) -> tf.keras.callbacks.History:
         return self.model.fit(
             x=x,
@@ -507,6 +508,7 @@ class Transformer:
             epochs=epochs,
             validation_data=validation_data,
             callbacks=callbacks,
+            **kwargs,
         )
 
     def preprocess_sentence(self, sentence: str) -> str:
