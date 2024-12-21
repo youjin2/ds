@@ -14,6 +14,9 @@ def load_dataframe() -> pd.DataFrame:
         header=None,
         names=["review", "sentiment"],
     )
+    df = df.dropna()
+    df["review"] = df.review.astype(str)
+    df["sentiment"] = df["sentiment"].astype(int)
     return df
 
 
