@@ -2,6 +2,7 @@
 ## Introduction
 A collection of examples in Data Science Series 093. (Python Text Mining Bible)
 
+
 ## Papers
 - [Efficient Estimation of Word Representations in Vector Space] (Word2Vec)
 - [Distributed Representations of Words and Phrases and their Compositionality] (Word2Vec + Negative Sampling)

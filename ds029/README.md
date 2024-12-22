@@ -3,6 +3,7 @@
 A collection of examples in Data Science Series 029. (Deep Learning in Practice)
 
 **NOTE:**  
-This project was implemented in another repository. Details can be found at [ds029].
+DS029 was integrated from another repository. Details can be found at this [link].
 
-[ds029]: https://github.com/youjin2/ds029
+
+[link]: https://github.com/youjin2/ds029

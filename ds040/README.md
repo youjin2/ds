@@ -3,7 +3,7 @@
 A collection of examples in Data Science Series 040. (Advanced Deep Learning with Keras)
 
 **NOTE:**  
-This project was implemented in another repository. Details can be found at [ds040].
+DS040 was integrated from another repository. Details can be found at this [link].
 
 
-[ds040]: https://github.com/youjin2/ds040
+[link]: https://github.com/youjin2/ds040
