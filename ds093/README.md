@@ -22,6 +22,7 @@ A collection of examples in Data Science Series 093. (Python Text Mining Bible)
 - [Language Models are Unsupervised Multitask Learners] (GPT-2)
 - [Language Models are Few-Shot Learners] (GPT-3)
 - [Training language models to follow instructions with human feedback] (InstructGPT)
+- [An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale] (ViT)
 
 
 
@@ -52,3 +53,4 @@ A collection of examples in Data Science Series 093. (Python Text Mining Bible)
 [Language Models are Unsupervised Multitask Learners]: https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf
 [Language Models are Few-Shot Learners]: https://arxiv.org/abs/2005.14165
 [Training language models to follow instructions with human feedback]: https://arxiv.org/abs/2203.02155
+[An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale]: https://arxiv.org/abs/2010.11929
