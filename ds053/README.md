@@ -5,6 +5,8 @@ A collection of examples in Data Science Series 053. (XAI; eXplainable AI)
 
 ## Datasets
 - [Pima Indians Diabetes Database]
+- [Loan Data]
+- [The Japanese Female Facial Expression (JAFFE) Dataset]
 
 
 ## Papers
@@ -18,6 +20,7 @@ A collection of examples in Data Science Series 053. (XAI; eXplainable AI)
 - [All Models are Wrong, but Many are Useful: Learning a Variable's Importance by Studying an Entire Class of Prediction Models Simultaneously]
 - [Greedy function approximation: A gradient boosting machine] (PDP)
 - [XGBoost: A Scalable Tree Boosting System]
+- [Consistent Individualized Feature Attribution for Tree Ensembles] (SHAP)
 
 
 ## References
@@ -26,6 +29,9 @@ A collection of examples in Data Science Series 053. (XAI; eXplainable AI)
 
 
 [Pima Indians Diabetes Database]: https://www.kaggle.com/datasets/uciml/pima-indians-diabetes-database
+[Loan Data]: https://github.com/JaehyunAhn/XAI_dataset/blob/master/Ch1.loan/loanData.csv
+[The Japanese Female Facial Expression (JAFFE) Dataset]: https://zenodo.org/records/3451524
+
 
 [Slave to the Algorithm? Why a 'Right to an Explanation' Is Probably Not the Remedy You Are Looking For]: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2972855
 [Visualizing and Understanding Convolutional Networks]: https://arxiv.org/abs/1311.2901
@@ -37,5 +43,6 @@ A collection of examples in Data Science Series 053. (XAI; eXplainable AI)
 [All Models are Wrong, but Many are Useful: Learning a Variable's Importance by Studying an Entire Class of Prediction Models Simultaneously]: https://arxiv.org/abs/1801.01489
 [Greedy function approximation: A gradient boosting machine]: https://projecteuclid.org/journals/annals-of-statistics/volume-29/issue-5/Greedy-function-approximation-A-gradient-boosting-machine/10.1214/aos/1013203451.full
 [XGBoost: A Scalable Tree Boosting System]: https://arxiv.org/abs/1603.02754
+[Consistent Individualized Feature Attribution for Tree Ensembles]: https://arxiv.org/abs/1802.03888
 
 [XAI; eXplainable AI]: https://github.com/wikibook/xai
