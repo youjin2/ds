@@ -8,6 +8,14 @@ FROM tensorflow/tensorflow:2.11.0-gpu
 #     apt-get install libpq-dev --yes && \
 #     apt-get install python-dev --yes
 
+# agree font install license
+RUN echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | debconf-set-selections
+
+RUN apt update && \
+    apt install graphviz --yes && \
+    apt install msttcorefonts --yes && \
+    apt install ttf-mscorefonts-installer --yes
+
 RUN echo "alias ll='ls -alF'" >> ~/.bashrc && \
     echo "alias la='ls -A'" >> ~/.bashrc && \
     echo "alias l='ls -CF'" >> ~/.bashrc
@@ -18,3 +26,5 @@ RUN pip install -r /tmp/installs/requirements.txt
 # COPY check_gpu.py /tmp/installs/
 
 WORKDIR /opt/project/
+
+
