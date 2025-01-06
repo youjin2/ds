@@ -25,6 +25,7 @@ A collection of examples in Data Science Series 053. (XAI; eXplainable AI)
 
 ## References
 - [XAI; eXplainable AI]
+- [Interpretable Machine Learning]
 
 
 
@@ -46,3 +47,4 @@ A collection of examples in Data Science Series 053. (XAI; eXplainable AI)
 [Consistent Individualized Feature Attribution for Tree Ensembles]: https://arxiv.org/abs/1802.03888
 
 [XAI; eXplainable AI]: https://github.com/wikibook/xai
+[Interpretable Machine Learning]: https://christophm.github.io/interpretable-ml-book/
