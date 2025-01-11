@@ -1,3 +1,4 @@
+import logging
 from typing import Callable, List, Tuple
 
 import numpy as np
@@ -5,6 +6,7 @@ import matplotlib.pyplot as plt
 from skimage.color import label2rgb
 from lime.lime_text import LimeTextExplainer
 from lime.lime_image import LimeImageExplainer
+from lime.lime_image import ImageExplanation
 from lime.explanation import Explanation
 from lime.wrappers.scikit_image import SegmentationAlgorithm
 
@@ -93,25 +95,13 @@ class LimeImageSummarizer:
         self._y = y
         self._n = len(X)
 
-    def __call__(
+    def display_explanation(
         self,
         idx: int,
-        top_labels: int = 6,
-        num_samples: int = 1000,
+        explanation: ImageExplanation,
         num_features: int = 8,
-        **kwargs,
-    ) -> Tuple[Explanation, plt.Figure]:
-        if idx < 0 or idx >= self._n:
-            raise IndexError(f"idx must be between [0, {self._n-1}")
-
-        explanation = self.explainer.explain_instance(
-            self._X[idx],
-            classifier_fn=self.classifier_fn,
-            top_labels=top_labels,
-            num_samples=num_samples,
-            segmentation_fn=self.segmentation_fn
-        )
-
+        **kwargs
+    ) -> plt.Figure:
         tmp_pos, mask_pos = explanation.get_image_and_mask(
             self._y[idx],
             positive_only=True,
@@ -141,5 +131,84 @@ class LimeImageSummarizer:
 
         for ax in [ax1, ax2, ax3, ax4]:
             ax.axis("off")
+
+        return fig
+
+    def display_false_examples(
+        self,
+        X: np.ndarray,
+        y: np.ndarray,
+        idx: int,
+        top_labels: int = 6,
+        num_samples: int = 1000,
+        num_features: int = 12,
+        min_weight: float = 0.001,
+        seed: int = 1234,
+        **kwargs,
+    ) -> Tuple[ImageExplanation, plt.Figure]:
+        explanation = self.explainer.explain_instance(
+            self._X[idx],
+            classifier_fn=self.classifier_fn,
+            top_labels=top_labels,
+            num_samples=num_samples,
+            segmentation_fn=self.segmentation_fn
+        )
+        probs = self.classifier_fn([self._X[idx]])[0]
+        fig, axes = plt.subplots(2, top_labels, figsize=kwargs.get("figsize", (16, 4)), constrained_layout=True)
+        np.random.seed(seed)
+        for i, (ax1, ax2) in zip(explanation.top_labels, axes.T):
+            tmp, mask = explanation.get_image_and_mask(
+                label=i,
+                positive_only=True,
+                num_features=num_features,
+                hide_rest=kwargs.get("hide_rest", False),
+                min_weight=min_weight
+            )
+
+            ax1.imshow(label2rgb(mask, tmp, bg_label=0))
+            ax1.set_title(f"Positive for FaceID={i}\n(Score={probs[i]*100:.2f})")
+            ax1.axis("off")
+
+            try:
+                face_id = np.random.choice(np.where(y == i)[0])
+                ax2.imshow(X[face_id])
+            except IndexError:
+                logging.warn(f"Label = {i} not exist in y")
+
+            ax2.set_title(f"Example of FaceID={i}")
+            ax2.axis("off")
+        fig.suptitle(f"True FaceID={self._y[idx]}")
+
+        return (explanation, fig)
+
+    def __call__(
+        self,
+        idx: int,
+        top_labels: int = 6,
+        num_samples: int = 1000,
+        num_features: int = 8,
+        display: bool = True,
+        **kwargs,
+    ) -> Tuple[ImageExplanation, plt.Figure]:
+        if idx < 0 or idx >= self._n:
+            raise IndexError(f"idx must be between [0, {self._n-1}")
+
+        explanation = self.explainer.explain_instance(
+            self._X[idx],
+            classifier_fn=self.classifier_fn,
+            top_labels=top_labels,
+            num_samples=num_samples,
+            segmentation_fn=self.segmentation_fn
+        )
+
+        if display:
+            fig = self.display_explanation(
+                idx=idx,
+                explanation=explanation,
+                num_features=num_features,
+                **kwargs
+            )
+        else:
+            fig = None
 
         return (explanation, fig)
