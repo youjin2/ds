@@ -7,6 +7,7 @@ A collection of examples in Data Science Series 053. (XAI; eXplainable AI)
 - [Pima Indians Diabetes Database]
 - [Loan Data]
 - [The Japanese Female Facial Expression (JAFFE) Dataset]
+- [Boston Housing Dataset]
 
 
 ## Papers
@@ -32,6 +33,7 @@ A collection of examples in Data Science Series 053. (XAI; eXplainable AI)
 [Pima Indians Diabetes Database]: https://www.kaggle.com/datasets/uciml/pima-indians-diabetes-database
 [Loan Data]: https://github.com/JaehyunAhn/XAI_dataset/blob/master/Ch1.loan/loanData.csv
 [The Japanese Female Facial Expression (JAFFE) Dataset]: https://zenodo.org/records/3451524
+[Boston Housing Dataset]: https://www.kaggle.com/code/prasadperera/the-boston-housing-dataset
 
 
 [Slave to the Algorithm? Why a 'Right to an Explanation' Is Probably Not the Remedy You Are Looking For]: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2972855
