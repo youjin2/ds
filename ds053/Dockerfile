@@ -14,7 +14,8 @@ RUN echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula selec
 RUN apt update && \
     apt install graphviz --yes && \
     apt install msttcorefonts --yes && \
-    apt install ttf-mscorefonts-installer --yes
+    apt install ttf-mscorefonts-installer --yes && \
+    apt install libgl1-mesa-glx --yes
 
 RUN echo "alias ll='ls -alF'" >> ~/.bashrc && \
     echo "alias la='ls -A'" >> ~/.bashrc && \
