@@ -1,4 +1,5 @@
 from copy import deepcopy
+from typing import List, Set
 
 import numpy as np
 from sklearn.linear_model import LinearRegression
@@ -12,6 +13,7 @@ class LinearShap:
     ) -> None:
         self.model = model
         self.data = data
+        # E[f(X)], X: train data (or subset)
         self.__phi0 = np.mean(self.model.predict(data))
 
     @property
@@ -30,6 +32,7 @@ class LinearShap:
             if np.isnan(val):
                 phi.append(0.)
             else:
+                # phi_i = b_i*(x_i - E[X_i]), X_i: i-th feature values in train data
                 phi.append(self.model.coef_[i]*(val - np.mean(self.data[:, i])))
 
         return np.array(phi)
@@ -46,6 +49,7 @@ class LinearShap:
         else:
             data = deepcopy(self.data)
             nan_idxs = np.isnan(x)
+            # replace feature values in train_data with non-nan feature values in given data point x
             data[:, ~nan_idxs] = x[~nan_idxs]
             pred = np.mean(self.model.predict(data))
 
